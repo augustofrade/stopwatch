@@ -11,6 +11,10 @@
     --red-hover: #D50000;
 }
 
+body {
+    overscroll-behavior-y: contain;
+}
+
 * {
     margin: 0;
     padding: 0;
