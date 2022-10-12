@@ -1,0 +1,160 @@
+/* ############################## */
+/*      General                   */
+/* ############################## */
+
+:root {
+    --blue: #2196F3;
+    --blue-hover: #2962FF;
+    --gray: #e0e0e0;
+    --gray-hover: #bdbdbd;
+    --red: #F44336;
+    --red-hover: #D50000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    user-select: none;
+}
+
+#wrapper {
+    background-color: #fafafa;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 100%;
+    padding: 10px 0;
+    max-width: 800px;
+    height: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 415px) {
+    #container {
+        padding: 0;
+    }
+}
+
+/* ############################## */
+/*      Header                     */
+/* ############################## */
+#header {
+    padding: 12px 4px;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+}
+
+h1 {
+    color: #121214;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* ############################## */
+/*      Main                      */
+/* ############################## */
+
+#timer {
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 300;
+    user-select: text;
+    transform: all 0.2s;
+    margin-bottom: 32px;
+    transform: translateY(60px);
+    transition: transform 0.2s;
+}
+
+#container.lap #timer {
+    margin-top: 20px;
+    transform: translateY(0px);
+}
+
+
+.lap__header {
+    padding-left: 24px;
+    padding-right: 24px;
+    border-bottom: 1px solid #bdbdbd;
+    color: #616161;
+}
+
+#lap__wrapper {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 0px 40px;
+    opacity: 0;
+    transition: opacity 0.1s;
+    transition-delay: 0.1s;
+}
+
+#container.lap #lap__wrapper {
+    opacity: 1;
+}
+
+.lap__row {
+    padding: 16px;
+    text-align: center;
+    display: flex;
+}
+
+.lap__row div {
+    flex: 1;
+    padding: 0px 8px;
+}
+
+/* ############################## */
+/*      Buttons                   */
+/* ############################## */
+#button__wrapper {
+    margin: 40px 0px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#button__wrapper button {
+    font-size: 20px;
+    width: 140px;
+    border-radius: 20px;
+    border: none;
+    padding: 12px 32px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+}
+
+#button__primary {
+    background-color: var(--blue);
+    color: #fff;
+}
+#button__primary:hover { background-color: var(--blue-hover); }
+
+#button__secondary {
+    background-color: var(--gray);
+    color: #121214;
+}
+#button__secondary:disabled:hover {
+    background-color: var(--gray);
+    cursor: initial !important;
+}
+#button__secondary:hover { background-color: var(--gray-hover); }
+
+.button__stop { background-color: var(--red) !important; }
+.button__stop:hover { background-color: var(--red-hover) !important; }
