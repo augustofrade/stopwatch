@@ -3,6 +3,7 @@ import Timer from "./Timer.js";
 
 "use strict";
 
+
 //#region HTML Elements
 const timerDisplay = document.getElementById("timer");
 const mainButton = document.getElementById("button__primary");
@@ -48,6 +49,7 @@ auxiliarButton.addEventListener("click", function(e) {
 });
 //#endregion
 
+
 //#region PWA
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
@@ -59,7 +61,7 @@ if ("serviceWorker" in navigator) {
 }
 
 let deferredPrompt; // Allows to show the install prompt
-const installButton = document.getElementById("install_button");
+const installButton = document.getElementById("install-button");
 
 window.addEventListener("beforeinstallprompt", e => {
     console.log("beforeinstallprompt fired");
@@ -73,6 +75,7 @@ window.addEventListener("beforeinstallprompt", e => {
 });
 
 function installApp() {
+    console.log(deferredPrompt)
     // Show the prompt
     deferredPrompt.prompt();
     installButton.disabled = true;
